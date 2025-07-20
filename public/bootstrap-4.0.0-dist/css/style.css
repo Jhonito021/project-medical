@@ -1,0 +1,803 @@
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  
+  /* Mode clair (par défaut) */
+  body.light-mode {
+    background-color: #ffffff;
+    color: #212529;
+  }
+  
+  body.light-mode .navbar {
+    background-color: #121212 !important;
+  }
+  
+  body.light-mode .table thead {
+    background-color: #e9ecef;
+  }
+  
+  body.light-theme .navbar-nav {
+  background-color: #f8f9fa; /* gris très clair */
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+  /* Mode sombre */
+  body.dark-mode {
+    background-color: #121212;
+    color: #f8f9fa;
+  }
+  
+  body.dark-mode .navbar {
+    background-color: #212529 !important;
+  }
+  
+  body.dark-mode a, body.dark-mode .nav-link {
+    color: #f8f9fa;
+  }
+  
+  body.dark-mode a:hover {
+    color: #ffc107;
+  }
+  
+  body.dark-mode .table {
+    color: #f8f9fa;
+  }
+  
+  body.dark-mode .table thead {
+    background-color: #343a40;
+  }
+
+  /* Style commun pour les icônes */
+.nav-icon-link i {
+  transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+  color: inherit;
+  opacity: 1;
+}
+
+
+
+/* Animation fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hover : zoom + couleur + fade-in pour chaque type */
+
+/* Patient */
+.nav-icon-link.patient:hover i {
+  color: #0d6efd;       /* bleu bootstrap */
+  transform: scale(1.3);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+
+/* Médecin */
+.nav-icon-link.medecin:hover i {
+  color: #198754;       /* vert bootstrap */
+  transform: scale(1.3);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Consultation */
+.nav-icon-link.consultation:hover i {
+  color: #0dcaf0;       /* cyan bootstrap */
+  transform: scale(1.3);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+  /* Contenu principal clair/sombre */
+.custom-hero {
+    background-color: #f8f9fa;
+    color: #212529;
+    transition: all 0.5s ease;
+  }
+  
+  .custom-card {
+    background-color: #ffffff;
+    color: #212529;
+    border: 1px solid #dee2e6;
+    transition: all 0.5s ease;
+  }
+  
+  /* Mode sombre */
+  body.dark-mode .custom-hero {
+    background-color: #1f1f1f;
+    color: #f8f9fa;
+  }
+  
+  body.dark-mode .custom-card {
+    background-color: #2c2c2c;
+    color: #f8f9fa;
+    border-color: #444;
+  }
+  /* Pied de page clair */
+.custom-footer {
+    background-color: #f8f9fa;
+    color: #212529;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  
+  .custom-footer .footer-link {
+    color: #212529;
+  }
+  
+  .custom-footer .footer-link:hover {
+    color: #0d6efd;
+  }
+  
+  /* Mode sombre */
+  body.dark-mode .custom-footer {
+    background-color: #1d1d1d;
+    color: #f8f9fa;
+  }
+  
+  body.dark-mode .custom-footer .footer-link {
+    color: #f8f9fa;
+  }
+  
+  
+  body.dark-mode .custom-footer .footer-link.facebook:hover {
+    color: #1877f2;
+    transform: scale(1.1);
+  }
+
+
+  body.dark-mode .custom-footer .footer-link.whatsapp:hover {
+    color: #25d366;
+    transform: scale(1.1);
+  }
+
+
+  body.dark-mode .custom-footer .footer-link.instagram:hover {
+    color: #e4405f;
+    transform: scale(1.1);
+  }
+
+  /* Transition fluide de l’icône */
+#toggle-theme i {
+  transition: transform 0.3s ease;
+}
+
+/* Classe pour déplacement vers le bas */
+.icon-down {
+  transform: translateY(10px);
+}
+
+/* Classe pour déplacement vers le haut */
+.icon-up {
+  transform: translateY(0);
+}
+
+  
+  /* Animation d'entrée */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+/* Animation pour les lignes du tableau */
+.table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* En mode sombre (si réutilisé un jour) */
+body.dark-mode .table tbody tr:hover {
+  background-color: #2d2d2d;
+}
+
+/* Transition globale des pages */
+.fade-transition {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.fade-transition.fade-out {
+  opacity: 0;
+}
+
+/* Animation d’apparition en cascade */
+@keyframes fadeInRow {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table tbody tr {
+  opacity: 0;
+  animation: fadeInRow 0.4s ease forwards;
+}
+
+/* Effet visuel clic */
+.btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.15) inset;
+  transition: transform 0.1s ease;
+}
+
+/* Animation d’apparition en cascade */
+@keyframes fadeInRow {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table tbody tr {
+  opacity: 0;
+  animation: fadeInRow 0.4s ease forwards;
+}
+
+.card.fade-in-cascade {
+  opacity: 0;
+  animation: fadeInRow 0.5s ease forwards;
+}
+
+.page-link {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-item.active .page-link {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+/* Couleur par défaut */
+#toggle-theme i {
+  color: #ffffff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Couleur en mode clair */
+body.light-mode #toggle-theme i {
+  color: #ffffff;
+}
+
+/* Couleur en mode sombre */
+body.dark-mode #toggle-theme i {
+  color: #ffc107; /* jaune clair pour contraste */
+}
+
+/* Animation descendante */
+@keyframes moveDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+  100% { transform: translateY(0); }
+}
+
+/* Animation montante */
+@keyframes moveUp {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.icon-animate-down {
+  animation: moveDown 0.3s ease;
+}
+
+.icon-animate-up {
+  animation: moveUp 0.3s ease;
+}
+
+/* Animation sur hover du bouton rond */
+#toggle-theme:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Icône animée au survol */
+#toggle-theme:hover i {
+  color: #f8f9fa;
+  transform: rotate(20deg);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Bouton thème stylé sans bordure + ombre */
+#toggle-theme {
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+/* Effet enfoncé au clic */
+#toggle-theme:active {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+  transform: scale(0.95);
+}
+
+/* Hover : ombre renforcée */
+#toggle-theme:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  transform: scale(1.05);
+}
+
+/* Animation de base */
+.card i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Patients : zoom + teinte bleu clair */
+.card-link-wrapper:hover .fa-user-injured {
+  transform: scale(1.2);
+  color: #0d6efd;
+}
+
+/* Médecins : zoom + rotation légère + vert clair */
+.card-link-wrapper:hover .fa-user-md {
+  transform: scale(1.2) rotate(-5deg);
+  color: #198754;
+}
+
+/* Consultations : zoom + rotation inverse + cyan clair */
+.card-link-wrapper:hover .fa-notes-medical {
+  transform: scale(1.2) rotate(5deg);
+  color: #0dcaf0;
+}
+
+/* Rendre toute la carte cliquable */
+.card-link-wrapper {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover élégant */
+.card-link-wrapper:hover .custom-card {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Supprimer soulignement */
+.card-link-wrapper:hover {
+  text-decoration: none;
+}
+
+/* Transition douce de la carte */
+.card.custom-card {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+/* Patients : fond bleu pâle au hover */
+.card-link-wrapper:hover .fa-user-injured {
+  color: #0d6efd;
+}
+.card-link-wrapper:hover .custom-card .fa-user-injured ~ .card-title {
+  color: #0d6efd;
+}
+.card-link-wrapper:hover .custom-card:has(.fa-user-injured) {
+  background-color: #e7f1ff;
+  border-color: #0d6efd;
+}
+
+/* Médecins : fond vert pâle */
+.card-link-wrapper:hover .fa-user-md {
+  color: #198754;
+}
+.card-link-wrapper:hover .custom-card .fa-user-md ~ .card-title {
+  color: #198754;
+}
+.card-link-wrapper:hover .custom-card:has(.fa-user-md) {
+  background-color: #e9f8f1;
+  border-color: #198754;
+}
+
+/* Consultations : fond bleu clair */
+.card-link-wrapper:hover .fa-notes-medical {
+  color: #0dcaf0;
+}
+.card-link-wrapper:hover .custom-card .fa-notes-medical ~ .card-title {
+  color: #0dcaf0;
+}
+.card-link-wrapper:hover .custom-card:has(.fa-notes-medical) {
+  background-color: #e7fafd;
+  border-color: #0dcaf0;
+}
+
+/* Ombre colorée pour Patients */
+.card-link-wrapper:hover .custom-card:has(.fa-user-injured) {
+  box-shadow: 0 8px 20px rgba(13, 110, 253, 0.4); /* bleu */
+}
+
+/* Ombre colorée pour Médecins */
+.card-link-wrapper:hover .custom-card:has(.fa-user-md) {
+  box-shadow: 0 8px 20px rgba(25, 135, 84, 0.4); /* vert */
+}
+
+/* Ombre colorée pour Consultations */
+.card-link-wrapper:hover .custom-card:has(.fa-notes-medical) {
+  box-shadow: 0 8px 20px rgba(13, 202, 240, 0.4); /* cyan */
+}
+/* Patients : texte devient bleu */
+.card-link-wrapper:hover .custom-card:has(.fa-user-injured) .card-text {
+  color: #0d6efd;
+}
+
+/* Médecins : texte devient vert */
+.card-link-wrapper:hover .custom-card:has(.fa-user-md) .card-text {
+  color: #198754;
+}
+
+/* Consultations : texte devient cyan */
+.card-link-wrapper:hover .custom-card:has(.fa-notes-medical) .card-text {
+  color: #0dcaf0;
+}
+
+
+/* Styles des icônes réseaux sociaux */
+.footer-link i {
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Facebook */
+.footer-link.facebook i {
+  color: #1877f2;
+}
+.footer-link.facebook:hover i {
+  transform: scale(1.2);
+  color: #0e63d4;
+}
+
+/* Twitter */
+.footer-link.twitter i {
+  color: #1da1f2;
+}
+.footer-link.twitter:hover i {
+  transform: scale(1.2);
+  color: #0d8ddf;
+}
+
+/* LinkedIn */
+.footer-link.linkedin i {
+  color: #0077b5;
+}
+.footer-link.linkedin:hover i {
+  transform: scale(1.2);
+  color: #005c8c;
+}
+
+.footer-link {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Halo lumineux au hover */
+.footer-link:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px currentColor;
+}
+.footer-link {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUpFooter 0.5s forwards;
+}
+
+@keyframes fadeInUpFooter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.footer-link {
+  display: inline-block;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUpFooter 0.5s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+@keyframes fadeInUpFooter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Halo lumineux */
+.footer-link:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px currentColor;
+}
+
+/* Couleurs officielles */
+.footer-link.facebook i { color: #1877f2; }
+.footer-link.whatsapp i { color: #25d366; }
+.footer-link.instagram i { color: #e4405f; }
+
+/* Optionnel : texte prend même couleur */
+.footer-link.facebook:hover, .footer-link.facebook:hover i {
+  color: #0d6efd;
+}
+.footer-link.whatsapp:hover, .footer-link.whatsapp:hover i {
+  color: #20b851;
+}
+.footer-link.instagram:hover, .footer-link.instagram:hover i {
+  color: #c13584;
+}
+.footer-link {
+  display: inline-block;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUpFooter 0.5s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* Animation cascade */
+@keyframes fadeInUpFooter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Facebook */
+.footer-link.facebook i {
+  color: #1877f2;
+}
+.footer-link.facebook:hover {
+  color: #1877f2;
+  transform: scale(1.1);
+  box-shadow: none;
+}
+
+/* WhatsApp */
+.footer-link.whatsapp i {
+  color: #25d366;
+  box-shadow: none;
+}
+.footer-link.whatsapp:hover {
+  color: #25d366;
+  transform: scale(1.1);
+  box-shadow: none;
+}
+
+/* Instagram */
+.footer-link.instagram i {
+  color: #e4405f;
+}
+.footer-link.instagram:hover {
+  color: #e4405f;
+  transform: scale(1.1);
+  box-shadow: none;
+}
+/* Animation : rotation */
+@keyframes rotateIcon {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animation : rebond */
+@keyframes bounceIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Animation : pulsation */
+@keyframes pulseIcon {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Appliquer animation au survol */
+.footer-link.facebook:hover i {
+  animation: rotateIcon 0.6s ease-in-out;
+}
+
+.footer-link.whatsapp:hover i {
+  animation: bounceIcon 0.4s ease;
+}
+
+.footer-link.instagram:hover i {
+  animation: pulseIcon 0.5s ease;
+}
+
+.footer-link:hover {
+  transform: scale(1.1);
+}
+
+/* Styles de base (pour thème sombre ou par défaut) restent les mêmes */
+.nav-icon-link {
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease, transform 0.3s ease;
+  color: inherit;
+  cursor: pointer;
+}
+
+.nav-icon-link i {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  color: inherit;
+  opacity: 1;
+  margin-right: 0.3rem;
+}
+
+/* Animation fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* === AMELIORATIONS THEME CLAIR === */
+body.light-theme .nav-icon-link.patient:hover {
+  color: #0a58ca; /* bleu plus foncé et saturé */
+  transform: scale(1.05); /* zoom léger sur le lien complet */
+  animation: fadeIn 0.3s ease forwards;
+}
+body.light-theme .nav-icon-link.patient:hover i {
+  transform: scale(1.4);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+body.light-theme .nav-icon-link.medecin:hover {
+  color: #157347; /* vert plus intense */
+  transform: scale(1.05);
+  animation: fadeIn 0.3s ease forwards;
+}
+body.light-theme .nav-icon-link.medecin:hover i {
+  transform: scale(1.4);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+body.light-theme .nav-icon-link.consultation:hover {
+  color: #31d2f2; /* cyan vif */
+  transform: scale(1.05);
+  animation: fadeIn 0.3s ease forwards;
+}
+body.light-theme .nav-icon-link.consultation:hover i {
+  transform: scale(1.4);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Style commun pour icône + texte */
+.nav-icon-link {
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+  color: inherit;
+}
+
+.nav-icon-link i {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  color: inherit;
+  opacity: 1;
+  margin-right: 0.3rem; /* pour espacer icône / texte */
+}
+
+/* Animation fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hover patient : icône + texte */
+.nav-icon-link.patient:hover {
+  color: #0d6efd;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.nav-icon-link.patient:hover i {
+  transform: scale(1.3);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Hover médecin : icône + texte */
+.nav-icon-link.medecin:hover {
+  color: #198754;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.nav-icon-link.medecin:hover i {
+  transform: scale(1.3);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Hover consultation : icône + texte */
+.nav-icon-link.consultation:hover {
+  color: #0dcaf0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.nav-icon-link.consultation:hover i {
+  transform: scale(1.3);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+#hero-title {
+  display: inline-block;
+  border-right: 2px solid #0d6efd;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink-caret 0.8s step-end infinite;
+}
+
+@keyframes blink-caret {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #0d6efd;
+  }
+}
+
+.cursor-shadow {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(13,110,253,0.6) 0%, rgba(0,0,0,0) 70%);
+  box-shadow:
+    0 0 20px rgba(13, 110, 253, 0.7),
+    0 0 40px rgba(111, 66, 193, 0.5),
+    0 0 60px rgba(0, 255, 255, 0.3);
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+  z-index: 10;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #ff3cac;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99;
+  animation: explode 600ms ease-out forwards;
+}
+
+@keyframes explode {
+  to {
+    transform: translate(var(--x), var(--y)) scale(0.5);
+    opacity: 0;
+  }
+}
